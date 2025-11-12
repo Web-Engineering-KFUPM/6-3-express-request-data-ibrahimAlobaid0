@@ -157,6 +157,12 @@ app.param("userId", (req, res, next, userId) => {
   }
 
   req.userIdNum = num;
-  next();
+//   next();
 });
 
+// ============================================
+// TODO-5:
+// ============================================
+app.get("/users/:userId", (req, res) => {
+  res.json({ ok: true, userId: req.userIdNum });
+});
